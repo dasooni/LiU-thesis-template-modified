@@ -1,0 +1,10 @@
+- Missing values in netflow about 2 years(!) or 32% (!)
+
+- Missing values in flow from DK1 -> SE3 about 56% (!!)
+- Missing values in flow from NO1 -> SE3 about 44% (!!)
+- Missing values in flow from SE4 -> SE3 about 98% (!!!)
+- Missing values in flow from SE3 -> DK1 about 32% (!)
+- Missing values in flow from SE3 -> NO1 about 53% (!!)
+- Missing values in flow from SE3 -> SE2 about 98% (!!!)
+
+

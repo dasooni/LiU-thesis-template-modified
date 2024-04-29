@@ -1,0 +1,65 @@
+\chapter{Introduction}
+\label{cha:introduction}
+In the Nordic countries the electricity market is liberalized. Companies can buy, sell or trade electricity as any other commodity on the Nordic power exchange Nord Pool \cite{NordPool}, where electricity is traded using spot and derivative contracts. However, electricity is a unique commodity because it is not storable which means it must be produced and consumed simultaneously \cite{LAGO2021116983}. This makes the primary role of the market price to establish equilibrium between supply and demand \cite{NordPool2}, which it does by making electricity tradable for a given time horizon from short-term to long-term. For short-term trading, Nord Pool offers the day-ahead and the intraday market \cite{history3}. The day-ahead market refers to trading electricity one day before it is delivered, allowing participants to specify the volume of electricity they are willing to trade for each hour of the coming day \cite{NordPool2}. The intraday market allows continuous trading of electricity on the same day it is delivered so that the market stays in balance \cite{NordPool_intraday}. For instance, if one electricity provider generates more power than planned the day before they are instead able to sell it in the intraday market \cite{NordPool_intraday, NordPool_priceformation}. 
+\\\\
+This thesis is carried out at one of the Sweden's major electricity consumers. Holmen Paper purchases over 3 TWh of electricity through Nord Pool's spot market every year to sustain the company's two paper mills. The process of purchasing electricity is an auction-based procedure with price dependent bids, where different entities bid the price they are willing to pay for a certain volume of energy the next day \cite{NordPool2}. As Holmen Paper adapts to operate flexibly within the energy market, the bidding strategy becomes increasingly important. 
+
+\section{Motivation}
+\label{sec:motivation}
+At Nord Pool, the price of electricity is published every day at around 13:00 Central European Time (CET) \cite{NordPool2}, which poses challenges as it allows limited time for maintenance planning for the two paper mills. Furthermore, the price of electricity is highly volatile in the short term due to the price being determined by momentary supply. Thus, in order to plan maintenance and improve bidding strategy it becomes important to forecast future energy price.
+\\\\
+%As Holmen employs price dependent bidding with a certain threshold, meaning if the electricity price exceeds the threshold it is considered too expensive to purchase. Thus, it becomes important to consider a probability based forecast rather than a point based forecast. Where in probability forecasts, predictions are made with respect to whether the price is above or below pre-defined threshold.
+Time series forecasting is a way of predicting future values based on past values using a model \cite{chatfield}. Electricity price forecasting (EPF) is a branch of time series forecasting that focuses on predicting future electricity prices \cite{dawn}.
+\\\\
+A range of implementations, including statistical methods such as autoregressive moving average (ARMA), autoregressive integrated moving average (ARIMA), regression to machine learning (ML) methods (such as support vector machines), artificial neural networks and hybrid methods, have been used for EPF over the years with varying degrees of success \cite{LAGO2021116983}. Among these deep learning (DL), a subfield of ML, has seen promising results on a wide number of applications today ranging from natural language, computer vision and time series forecasting \cite{Jedrzejewski_2022}.
+\\\\
+A majority of studies within EPF aim to predict the exact value of prices at future hours \cite{epfnpool}, known as point forecasting. This does not provide information about the confidence of a model. To solve this, probabilistic forecasting models are used. These models output a prediction interval with a given probability. 
+\\\\
+Holmen Paper employs price dependent bidding with a certain threshold, meaning that if the electricity price exceeds the threshold it is considered too expensive to purchase. In order to plan maintenance and improve bidding strategy it is not necessary to predict the exact value of electricity prices, making probabilistic forecasting more useful for this purpose as well. 
+\\\\
+While early methods within DL were based on feedforward neural networks (FNN) \cite{graupe2013principles}, the field has seen impressive advances. Long short-term memory (LSTM) \cite{LSTM} is one of the most prominent method for time series forecasting due to its ability to remember previous inputs for a long period of time \cite{dlorigin}.
+\\\\
+The existing methods employed by Holmen Paper lack precision and are not useful to provide an important basis for decision regarding price dependent bidding or to predict maintenance on days where energy costs are too high. 
+Thus, in order to plan maintenance and improve bidding strategy it becomes important to have a better understanding of future energy prices.
+\\\\
+To mitigate risks and optimize energy consumption, Holmen Paper plans to utilize DL methods as they have showcased superior performance in predicting electricity prices 
+\cite{Jedrzejewski_2022}. 
+
+\section{Aim}
+\label{sec:aim}
+The aim of this thesis to implement a DL-based model to forecast weekly energy prices on the Nord Pool bidding zone SE3, as seen in Figure \ref{fig:zones}. To provide an accurate forecast, factors that drive the electricity prices will be investigated based on existing literature. To do so, datasets based on historical market data and other factors will be used to train multiple DL methods.
+
+\section{Research questions}
+\label{sec:research-questions}
+%This is where the research questions are described.
+%Formulate these as explicit questions, terminated with a
+%question mark. A report will usually contain several different
+%research questions that are somehow thematically connected.
+%There are usually 2-4 questions in total.
+
+This thesis focuses on the following research questions: 
+
+\begin{enumerate}
+\item How can the most important factors behind short-term energy prices be identified?
+\item How can deep learning methods be employed to accurately forecast spot price interval on the Nordic energy market Nord Pool? 
+\item What performance metrics can be used to evaluate the models performance? 
+\item How does the model perform when only considering the most important factors?
+\end{enumerate}
+
+\section{Delimitations}
+\label{sec:delimitations}
+
+This thesis main focus is on the development of a model for forecasting week-ahead electricity price on the Nord Pool market for Holmen Paper. The study will focus on bidding zone SE3 in Sweden, as this is where Holmen Paper's mills are located. 
+\\
+The models will be developed using LSTM which is a type of neural network architecture. LSTM is well established and has showcased state-of-the-art performance in EPF \cite{spatiotemp} and even superior performance compared to other neural network architectures \cite{stackedlstm}. The study will explore different LSTM configurations and compare their performances. 
+\\\\
+This thesis will be based on data from the Nord Pool spot market. The data will include historical electricity prices, weather data such as temperature, wind speed, and precipitation, as well as other factors related to load profile. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Intro.tex ends here
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "demothesis"
+%%% End: 
