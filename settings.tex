@@ -42,7 +42,6 @@
 %% NOTE: You may need to add more changes to fully conform to a citation style
 %% (making certain elements in italics, etc).
 %% The default is very bad (numeric style sorted alphabetically instead of by appearance).
-
 \usepackage[backend=biber,style=numeric,sorting=none,hyperref]{biblatex}
 %% To set the font of your thesis, use the \setmainfont{} command,
 %% surrounded with \ifxetex if you want to switch between xelatex and pdflatex
@@ -54,9 +53,12 @@
 %% The VZ43 chapter style, from Memoir contributed chapter styles: ftp://ftp.tex.ac.uk/ctan%3A/info/MemoirChapStyles/MemoirChapStyles.pdf
 %%%%%%%%%%%
 \usepackage{float}
-\usepackage{amsmath}
+%\usepackage{amsmath}
+\usepackage{mathtools}
 
 \usepackage{calc,color}
+\usepackage{colortbl}
+
 \newif\ifNoChapNumber
 \newcommand\Vlines{%
 \def\VL{\rule[-2cm]{1pt}{5cm}\hspace{1mm}\relax}
@@ -101,6 +103,8 @@
 
 \addbibresource{references.bib}
 
+\definecolor{Gray}{gray}{0.9}
+\newcolumntype{a}{>{\columncolor{Gray}}c}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% settings.tex ends here
 
