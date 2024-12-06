@@ -1,9 +1,8 @@
-# LaTeX class for LiU Thesis
+# LaTeX class for LiTH Master Thesis
 
-This is `liuthesis`, a modern class for writing a thesis for PhD, Licenciate,
-Master, or Bachelor (plus some more) at Linköping University (LiU) in Sweden. 
+This is a modified `liuthesis`, for writing master thesis for LiTH.
 
-## Contributors
+## Credits
 
 This list is not sorted in any particular order. Initial work was done by Ola
 Leifler, but several people have since made contributions to
@@ -15,37 +14,10 @@ commit log for full details.
 - Ivan Ukhov, ivan.ukhov@liu.se
 - Jan-Åke Larsson, jan-ake.larsson@liu.se
 
-## List of changes
-
-For a full list of changes, see the commit log. Here are some recent
-changes:
-
-2022-01-25 - The template includes initial support for
-[PDF/A](https://en.wikipedia.org/wiki/PDF/A) through contributions by
-Jan-Åke Larsson.
-
-## How to contribute
-
-Please do submit issues so we know what works and what does not work. 
-If your issue pertains to deviations from prescribed formats, please include a 
-pdf or other detailed description of how the typeset material should look. If 
-there are missing features or bugs, please provide a minimal example that 
-demonstrates the issue, along with a description of your environment. At best, 
-provide a merge request. Remember that each merge request should address one 
-specific issue, though, and be generally applicable to all theses at LiU. 
-Merge Requests will be reviewed and approved by main developers, currently Ola 
-Leifler.
-
 ## FAQ
 
 - Q: How do I modify the introductory pages to include/exclude a dictionary, list of algorithms, list of tables, list of figures, ...?
 - A: The template does not include explicit options for enabling or disabling all possible combinations of preamble material because there are any ideas about exactly what should change and how. Therefore, the easiest solution is simply to look at the section called [`AtEndPreamble`](https://gitlab.liu.se/olale55/liuthesis/-/blob/master/liuthesis.cls#L1139) where preamble material is included and make your modifications to those three-four lines of code that are relevant. 
-
-## Where to download
-
-The latest version can always be found on GitLab. `liuthesis` is constantly
-being developed, so go to [the download
-page](https://gitlab.ida.liu.se/olale55/liuthesis) to get the latest version.
 
 ## Package options
 
